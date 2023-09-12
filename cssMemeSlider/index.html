@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cssMemeSlider</title>
     <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+
 </head>
+
 <body>
-    
+    <div class="slider">
+        <div class="slides">
+            <input name="slide" type="radio" id="btn-1" checked>
+            <input name="slide" type="radio" id="btn-2">
+            <input name="slide" type="radio" id="btn-3">
+            <input name="slide" type="radio" id="btn-4">
+
+            <div class="slide slide-1">
+                <img src="img/meme-1.jpeg" alt="">
+            </div>
+            <div class="slide ">
+                <img src="img/meme-2.jpg" alt="">
+            </div>
+            <div class="slide ">
+                <img src="img/meme-3.jpg" alt="">
+            </div>
+            <div class="slide ">
+                <img src="img/meme-4.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="navigation">
+            <label for="btn-1" class="slide-toggle"></label>
+            <label for="btn-2" class="slide-toggle"></label>
+            <label for="btn-3" class="slide-toggle"></label>
+            <label for="btn-4" class="slide-toggle"></label>
+        </div>
+    </div>
 </body>
+
 </html>
+
+
+
+<!-- Шаблон для коммита в гит баш
+LANG=en_EN git commit -m "init: start cssMemeSlider-task $(date '+(%a, %b %d, %Y %r)')"
+-->
