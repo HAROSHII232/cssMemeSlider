@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 
-input[type="radio"] {
-    display: none;
+input {
+    appearance: none;
 }
 
 .slider {
@@ -51,48 +51,14 @@ input[type="radio"] {
     display: flex;
     gap: 1rem;
     justify-content: end;
+
     margin-top: -1.5rem;
-}
-
-.slide-toggle {
-    width: 2rem;
-    height: 2rem;
-
-    background: white;
-    cursor: pointer;
-    opacity: 0.5;
-    border-radius: 50%;
-    transition: all .4s ease;
-}
-
-.slide-toggle:hover {
-    opacity: 1;
-}
-
-#btn-1:checked~.slides>.slide-1,
-#btn-1:checked~.slide-text-wrapper>.slide-text-1 {
-    margin-left: 0;
-}
-
-#btn-2:checked~.slides>.slide-1,
-#btn-2:checked~.slide-text-wrapper>.slide-text-1 {
-    margin-left: -25%;
-}
-
-#btn-3:checked~.slides>.slide-1,
-#btn-3:checked~.slide-text-wrapper>.slide-text-1 {
-    margin-left: -50%;
-}
-
-#btn-4:checked~.slides>.slide-1,
-#btn-4:checked~.slide-text-wrapper>.slide-text-1 {
-    margin-left: -75%;
 }
 
 .slide-text-wrapper {
     display: flex;
     overflow: hidden;
-    width: 400%; 
+    width: 400%;
 }
 
 .slide-text {
@@ -102,3 +68,47 @@ input[type="radio"] {
     transition: all .3s ease;
 }
 
+.control {
+    cursor: pointer;
+
+    border-radius: 50%;
+    border: 1rem solid cornflowerblue;
+    border-image: radial-gradient(cornflowerblue 50%, transparent 55%) 50%;
+    transition: all .4s ease;
+}
+
+.control:hover {
+    border-image: radial-gradient(white 50%, transparent 55%) 50%;
+}
+
+.control:checked {
+    border-image: radial-gradient(rgb(76, 75, 75) 34%, cornflowerblue 37%, cornflowerblue 50%, rgb(76, 75, 75) 55%) 50%;
+}
+
+.control:checked:hover {
+    border-image: radial-gradient(rgb(76, 75, 75) 34%, white 37%, white 50%, rgb(76, 75, 75) 55%) 50%;
+}
+
+.control:active {
+    opacity: 0.5;
+}
+
+.slider:has(#btn-1:checked) .slide-1,
+.slider:has(#btn-1:checked) .slide-text-1 {
+    margin-left: 0;
+}
+
+.slider:has(#btn-2:checked) .slide-1,
+.slider:has(#btn-2:checked) .slide-text-1 {
+    margin-left: -25%;
+}
+
+.slider:has(#btn-3:checked) .slide-1,
+.slider:has(#btn-3:checked) .slide-text-1 {
+    margin-left: -50%;
+}
+
+.slider:has(#btn-4:checked) .slide-1,
+.slider:has(#btn-4:checked) .slide-text-1 {
+    margin-left: -75%;
+}
