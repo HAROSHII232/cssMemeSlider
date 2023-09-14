@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input {
+    appearance: none;
+}
+
+.slider {
+    width: 60%;
+    margin: 0 auto;
+
+    background-color: rgb(76, 75, 75);
+
+    padding: 2%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+
+    width: 400%;
+    height: 70%;
+    margin-bottom: 2rem;
+}
+
+.slide {
+    width: 25%;
+
+    transition: all .7s ease;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 1rem;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-container {
+    overflow: hidden;
+    width: 60%;
+}
+
+.slide-text-wrapper {
+    display: flex;
+    width: 400%;
+}
+
+.slide-text {
+    width: 25%;
+
+    color: white;
+    font-size: 2rem;
+
+    transition: all .3s ease;
+}
+
+.navigation {
+    display: flex;
+    gap: 1rem;
+}
+
+.control {
+    cursor: pointer;
+
+    border: 1rem solid cornflowerblue;
+    border-image: radial-gradient(cornflowerblue 50%, transparent 55%) 50%;
+    transition: all .4s ease;
+}
+
+.control:hover {
+    border-image: radial-gradient(white 50%, transparent 55%) 50%;
+}
+
+.control:checked {
+    border-image: radial-gradient(rgb(76, 75, 75) 34%, cornflowerblue 37%, cornflowerblue 50%, rgb(76, 75, 75) 55%) 50%;
+}
+
+.control:checked:hover {
+    border-image: radial-gradient(rgb(76, 75, 75) 34%, white 37%, white 50%, rgb(76, 75, 75) 55%) 50%;
+}
+
+.control:active {
+    opacity: 0.5;
+}
+
+.slider:has(#btn-1:checked) .slide-1,
+.slider:has(#btn-1:checked) .slide-text-1 {
+    margin-left: 0;
+}
+
+.slider:has(#btn-2:checked) .slide-1,
+.slider:has(#btn-2:checked) .slide-text-1 {
+    margin-left: -25%;
+}
+
+.slider:has(#btn-3:checked) .slide-1,
+.slider:has(#btn-3:checked) .slide-text-1 {
+    margin-left: -50%;
+}
+
+.slider:has(#btn-4:checked) .slide-1,
+.slider:has(#btn-4:checked) .slide-text-1 {
+    margin-left: -75%;
+}
+
+@media(max-width:1024px) {
+
+    .slides {
+        height: 55%;
+    }
+}
+
+@media (max-width:900px) {
+    .slider {
+        width: 100%;
+    }
+
+    .wrapper {
+        justify-content: center;
+    }
+}
+
+
+@media (max-width:500px) {
+    .slides {
+        height: 40%;
+    }
+
+    .container {
+        flex-direction: column-reverse;
+        align-items: center;
+
+        gap: 1.5rem;
+    }
+
+    .left-container {
+        width: 100%;   
+    }
+    .slide-text {
+        font-size: 1.5rem;
+    }
+}
